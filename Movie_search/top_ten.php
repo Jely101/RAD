@@ -40,14 +40,14 @@ each time a item from the databse is queried. -->
                 */
 
             // Image dimensions
-            $imageWidth = 1700;
+            $imageWidth = 1000;
             $imageHeight = 400;
 
             // Grid dimensions and placement within image
             $gridTop = 40;
             $gridLeft = 50;
             $gridBottom = 340;
-            $gridRight = 1650;
+            $gridRight = 950;
             $gridHeight = $gridBottom - $gridTop;
             $gridWidth = $gridRight - $gridLeft;
 
@@ -142,7 +142,9 @@ each time a item from the databse is queried. -->
             imagepng($chart, 'chart.png');
         ?>        
         <h2>
-        <img src = "chart.png" alt = "results from dice rolls" />         
+		<div class="ex1">
+			<img src = "chart.png" alt = "results from dice rolls" />       
+		</div>		
         </h2>
     </main>
 </body>
