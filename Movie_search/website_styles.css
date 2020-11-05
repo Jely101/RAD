@@ -4,21 +4,11 @@
 	position: relative;
 	text-align: center;
 	font-family: calibri;
-	color:maroon;
+	color:white;
 	outline-color: dimgray;
 	text-shadow: 2px 2px 5px rgb(9, 5, 63);
-
-	width: auto;
-}
-
-.centered {
-	/* keeps the text in the center*/
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
 	font-size: 50px;
+	width: auto;
 }
 
 h2 {
@@ -146,3 +136,8 @@ body{
 	display: table;
 	clear: both;
   }
+  
+  div.ex1 {
+  overflow: auto;
+  
+}
