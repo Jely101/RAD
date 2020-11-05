@@ -148,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </h3>
         </h2>
-
+		<div class= "ex1">
         <?php
         if($resultFound) {
 
@@ -191,6 +191,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
             
         ?>
+		</div>
     </main>
 </body>
 
