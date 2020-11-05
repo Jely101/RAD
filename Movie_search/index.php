@@ -4,7 +4,7 @@
     $title = 'Home';
     require 'head.php';
 ?>
-//hello
+//hello hhh
 
     <ul id="nav">
         <!-- will be a horizontal navigation bar of different pages -->
