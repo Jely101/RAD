@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else{
 
         if(!empty($_POST["title"])) {
-               $query .= "Title = '" . $title . "'";
+               $query .= "Title LIKE '%" . $title . "%'";
         }
         if(!empty($_POST["genre"])) {
             if(!empty($_POST["title"])) {
@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
               $resultFound = true;
-            
+        $query .= ' ORDER BY Title';    
     }
 }
 ?>
