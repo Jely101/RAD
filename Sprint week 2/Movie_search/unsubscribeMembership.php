@@ -1,3 +1,13 @@
+<!--
+Date: 15/11/2020
+Students: Willian Bernatzki Woellner,  Jyle Darling, Travis Reeve
+Course: Diploma of Software Development
+Cluster: Rapid App Development
+Page: unsubscribeMembership.php
+Version: 2.0
+Project: RAD application on the Movie Search Database.  
+Version Developer: Willian Bernatzki Woellner
+-->
 <?php
 $page = 'Unsubscribe Membership';
 $title = 'unsubscribeMembership';
@@ -6,7 +16,7 @@ require 'adminHead.php';
 require 'usefulFunctions.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["remove"])) {
+    if (isset($_POST["remove"])) { //check whick button submit (link or button)
         $email = testInput($_POST["email"]);
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
     } else {
@@ -23,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+//verifyMembershipUnsubscribe Function - It check if the membership ask to unsubscribe.
 function verifyMembershipUnsubscribe($email)
 {
     try {
@@ -46,6 +57,7 @@ function verifyMembershipUnsubscribe($email)
     return $membershipCheck;
 }
 
+//removeMembership Function - It remove a membership to the database
 function removeMembership($email)
 {
     try {
@@ -127,7 +139,10 @@ function removeMembership($email)
                 } catch (PDOException $e) {
                     showMessage('Error: ' . $e->getMessage());
                 }
-                $conn = null;
+                finally
+                {
+                    $conn = null;
+                }
                 ?>
             </div>
         </h3>

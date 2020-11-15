@@ -1,8 +1,17 @@
+<!--
+Date: 15/11/2020
+Students: Willian Bernatzki Woellner,  Jyle Darling, Travis Reeve
+Course: Diploma of Software Development
+Cluster: Rapid App Development
+Page: search.php
+Version: 2.0
+Project: RAD application on the Movie Search Database.  
+Version Developer: Jyle Darling
+-->
+
 <!-- This code allows the user to query the database with a search term based on multiple input fields.
  the code also updates any database items returned by the search query to track the amount of times that item has been searched for.-->
 <?php
-
-
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 $page = 'Search';
 $title = 'Search';

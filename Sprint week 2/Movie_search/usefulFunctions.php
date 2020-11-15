@@ -1,8 +1,18 @@
+<!--
+Date: 15/11/2020
+Students: Willian Bernatzki Woellner,  Jyle Darling, Travis Reeve
+Course: Diploma of Software Development
+Cluster: Rapid App Development
+Page: usefulFunctions.php
+Version: 2.0
+Project: RAD application on the Movie Search Database.  
+Version Developer: Willian Bernatzki Woellner
+-->
 <?php
 if (!isset($_SESSION)) {
     session_start();
 }
-//var_dump($_SESSION['message']);
+
 if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {
     echo $_SESSION['message'];
     $_SESSION['message'] = "";
@@ -11,7 +21,7 @@ if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-
+//sendEmail Function - It send the email to admin to unsubscribe a membership
 function sendEmail($unsubscribeEmail)
 {
     require 'PHPMailer/src/Exception.php';

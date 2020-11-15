@@ -1,3 +1,14 @@
+<!--
+Date: 15/11/2020
+Students: Willian Bernatzki Woellner,  Jyle Darling, Travis Reeve
+Course: Diploma of Software Development
+Cluster: Rapid App Development
+Page: index.php
+Version: 2.0
+Project: RAD application on the Movie Search Database.  
+Version Developer: Willian Bernatzki Woellner
+-->
+
 <!-- This code established the index for the website -->
 <?php
 $page = 'Home';
@@ -6,7 +17,7 @@ require 'head.php';
 require 'usefulFunctions.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["subscribe"])) {
+    if (isset($_POST["subscribe"])) { //check which button submit the post 
         $fullName = testInput($_POST["fullName"]);
         $fullName = filter_var($fullName, FILTER_SANITIZE_STRING);
         $email = testInput($_POST["email"]);
@@ -28,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+//verifySubscribe Function - It check if email already subscribe on the application
 function verifySubscribe($email)
 {
     try {
@@ -48,6 +60,7 @@ function verifySubscribe($email)
     return $subscribeCheck;
 }
 
+//subscribe Function - It save the membership subscription on the database
 function subscribe($fullName, $email, $monthlyNews, $breakingNews)
 {
     try {
@@ -81,6 +94,7 @@ function subscribe($fullName, $email, $monthlyNews, $breakingNews)
     }
 }
 
+//unsubscribe Function - It save the membership unsubscription on the database and call to sendemail function
 function unsubscribe($email)
 {
     try {
@@ -99,7 +113,7 @@ function unsubscribe($email)
     } finally {
         $conn = null;
     }
-    sendEmail($email);
+    sendEmail($email); //Call SendEmail function
     header('Location: index.php');
 }
 
