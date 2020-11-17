@@ -28,7 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (verifyMembershipUnsubscribe($email)) {
             removeMembership($email);
         } else {
-            showMessage('Membership cannot be removed. Unsolicited unsubscribe.');
+            showMessage('Membership cannot be removed. Unsolicited unsubscribe or email not found.');
+            header('Location: unsubscribeMembership.php');
         }
     }
 }

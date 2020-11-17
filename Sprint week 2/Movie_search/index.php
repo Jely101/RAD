@@ -27,15 +27,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (verifySubscribe($email)) {
             subscribe($fullName, $email, $monthlyNews, $breakingNews);
-        }
-        else{
-            showMessage('Email already subscribed.');
+        } else {
+            showMessage('Email is already subscribed.');
             header('Location: index.php');
         }
     } else {
         $email = testInput($_POST["email"]);
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-        unsubscribe($email);
+
+        if (verifyUnsubscribe($email)) {
+            unsubscribe($email);
+        } else {
+            showMessage('Unsubscribe already requested or email not found.');
+            header('Location: index.php');
+        }
     }
 }
 
@@ -58,6 +63,30 @@ function verifySubscribe($email)
         $conn = null;
     }
     return $subscribeCheck;
+}
+
+
+//verifyUnsubscribe Function - It check if email already unsubscribe on the application
+function verifyUnsubscribe($email)
+{
+    try {
+        require "connectpdo.php";
+        $sql = "SELECT email 
+                FROM membership 
+                WHERE email = :email
+                AND unsubscribe =:unsubscribe";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(array( //execute query
+            ':email' => $email,
+            ':unsubscribe' => false
+        ));
+        $unsubscribeCheck = $stmt->rowCount() > 0;
+    } catch (PDOException $e) {
+        showMessage('Error: ' . $e->getMessage());
+    } finally {
+        $conn = null;
+    }
+    return $unsubscribeCheck;
 }
 
 //subscribe Function - It save the membership subscription on the database
@@ -144,7 +173,7 @@ function unsubscribe($email)
                             <label for="monthlyNews">Monthly Newsletter</label>
                         </div>
                         <div class="col-50 rowCheckbox">
-                            <input type="checkbox" id="monthlyNews" name="monthlyNews" class="checkbox">
+                            <input type="checkbox" id="monthlyNews" name="monthlyNews" class="checkbox" checked>
                         </div>
 
                     </div>
@@ -153,7 +182,7 @@ function unsubscribe($email)
                             <label for="breakingNews">Breaking News</label>
                         </div>
                         <div class="col-50 rowCheckbox">
-                            <input type="checkbox" id="breakingNews" name="breakingNews" class="checkbox">
+                            <input type="checkbox" id="breakingNews" name="breakingNews" class="checkbox" checked>
                         </div>
 
                     </div>
