@@ -135,7 +135,7 @@ each time a item from the databse is queried. -->
     ?>
     <h2>
         <div class="ex1">
-            <img src="chart.png" alt="results from dice rolls" />
+            <img src="chart.png" width="1000px" height="400px" alt="results from dice rolls" />
         </div>
     </h2>
 </main>
