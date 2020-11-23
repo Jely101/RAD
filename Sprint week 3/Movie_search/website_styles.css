@@ -1,0 +1,156 @@
+.header {
+	/* applies the style to the text on top of the back ground image */
+	padding-top: 40px;
+	position: relative;
+	text-align: center;
+	font-family: calibri;
+	color:white;
+	outline-color: dimgray;
+	text-shadow: 2px 2px 5px rgb(9, 5, 63);
+	font-size: 50px;
+	width: auto;
+}
+
+h2, h3, label {
+	
+	text-align: center;
+	font-family: calibri;
+	color: lightgray;
+}
+
+ul {
+	border: 1px solid;
+	border-color: black;
+	border-width: 10px 0;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	text-align: center;
+	font-family: calibri;
+  }
+  
+  li {
+	display: inline;
+  }
+  
+  li a {
+	display: inline-block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+	background-color: #111;
+  }
+
+body{
+	background-color: #660000;
+}
+#results {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#results td, #results th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#results tr:nth-child(odd){background-color: #813e3e;}
+
+#results tr:nth-child(even){background-color: #886464;}
+
+#results tr:hover {background-color: rgb(224, 135, 0);}
+
+#results th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #3f0000;
+  color: white;
+}
+
+* {
+	box-sizing: border-box;
+  }
+  
+  input[type=text], input[type=password], input[type=email], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+  }
+  
+  label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+  }
+  
+  input[type=submit] {
+	background-color: #7c0000;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: center;
+  }
+  
+  input[type=submit]:hover {
+	background-color: #111;
+  }
+  
+  .container {
+	border-radius: 5px;
+	background-color: #3f0000;
+	padding: 20px;
+  }
+  
+  .col-25 {
+	float: left;
+	width: 25%;
+	margin-top: 6px;
+  }
+  
+  .col-50 {
+	float: left;
+	width: 50%;
+	margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+  div.ex1 {
+  overflow: auto;
+  
+}
+
+.checkbox{
+	float: left;
+}
+
+.rowCheckbox{
+	padding-top: 15px;
+}
+
+.linkButton{
+	font-size: 12px;
+	color: white;
+}
+
+.divMessage{
+	font-size: 16px;
+	font-weight: bold;
+}
