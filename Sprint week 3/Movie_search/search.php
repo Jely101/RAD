@@ -183,7 +183,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         ?>
     </div>
-    <div class="powr-star-rating" id="89cfbe83_1606009383"></div><script src="https://www.powr.io/powr.js?platform=html"></script>
 </main>
 
 </body>

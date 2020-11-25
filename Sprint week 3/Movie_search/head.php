@@ -38,6 +38,7 @@ Version Developer: Willian Bernatzki Woellner
         <!-- will be a horizontal navigation bar of different pages -->
         <li><a href="index.php">Home</a></li>
         <li><a href="search.php">Search</a></li>
+        <li><a href="rate_movies.php">Rate A Movie</a></li>
         <li><a href="top_ten.php">Top Ten</a></li>
         <li><a href="adminLogin.php">Admin Login</a></li>
     </ul>
