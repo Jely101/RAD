@@ -5,6 +5,14 @@ each time a item from the databse is queried. -->
     $title = 'Top Ten';
     require 'head.php';
 ?>
+<?php
+$page = $_SERVER['PHP_SELF'];
+$sec = "5";
+?>
+<html>
+    <head>
+    <meta http-equiv="refresh" content="<?php echo $sec?>;URL='<?php echo $page?>'">
+    </head>
 <main>
 <div class="container">
     <h1>Top 10 Movies Searched by Users<h1>
@@ -18,10 +26,12 @@ each time a item from the databse is queried. -->
 
     $dataTitle = array();
     $dataCount = array();
+	$chartYCount;
 
     foreach ($dataTopTen as $row) {
         $title = $row['Title'];
         $count = $row['times_searched'];
+		$chartYCount = $count;
 
         array_push($dataTitle, $title);
         array_push($dataCount, $count);
@@ -56,10 +66,10 @@ each time a item from the databse is queried. -->
     $labelMargin = 8;
 
     // Max value on y-axis
-    $yMaxValue = 30;
+    $yMaxValue = $chartYCount + 20;
 
     // Distance between grid lines on y-axis
-    $yLabelSpan = 5;
+    $yLabelSpan = (ceil($chartYCount / 10) * 10) / 5;
 
     // Init image
     $chart = imagecreate($imageWidth, $imageHeight);
@@ -194,10 +204,10 @@ each time a item from the databse is queried. -->
     $labelMargin = 8;
 
     // Max value on y-axis
-    $yMaxValue = 30;
+    $yMaxValue = 5;
 
     // Distance between grid lines on y-axis
-    $yLabelSpan = 5;
+    $yLabelSpan = 1;
 
     // Init image
     $chart2 = imagecreate($imageWidth, $imageHeight);

@@ -157,7 +157,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <th>Rating</th>
                         <th>Year</th>
                         <th>Genre</th>
-                        <th>Rating</th>
                     </tr>";
             // output data of each row
             foreach ($dataSearch as $row) {
@@ -174,7 +173,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <td>$rating</td>
                             <td>$year</td>
                             <td>$genre</td>
-                            <td></td>
                         </tr>";
             }
             echo "</table>";
