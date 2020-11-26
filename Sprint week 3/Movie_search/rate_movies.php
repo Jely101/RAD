@@ -96,7 +96,7 @@ Version Developer: Travis Reeve
                     </div>
                     <?php
                             include "connectpdo.php";
-                            $sql5 = "SELECT Title, Studio, Status, Rating, Year, Genre, `star_rating` FROM movies_table ORDER BY star_rating DESC LIMIT 5";
+                            $sql5 = "SELECT Title, Studio, Status, Rating, Year, Genre, `star_rating` FROM movies_table ORDER BY star_rating DESC LIMIT 25";
                             $stmt5 = $conn->prepare($sql5);
                             $stmt5->execute();
                             $dataSearch = $stmt5->fetchAll();
