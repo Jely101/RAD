@@ -15,7 +15,7 @@ $sec = "5";
     </head>
 <main>
 <div class="container">
-    <h1>Top 10 Movies Searched by Users<h1>
+    <h1 style="color:white;">Top 10 Movies Searched by Users<h1>
     <?php
     $x = 0;
     require "connectpdo.php";
@@ -27,6 +27,7 @@ $sec = "5";
     $dataTitle = array();
     $dataCount = array();
 	$chartYCount;
+	$altTextSearched = "";
 
     foreach ($dataTopTen as $row) {
         $title = $row['Title'];
@@ -35,6 +36,10 @@ $sec = "5";
 
         array_push($dataTitle, $title);
         array_push($dataCount, $count);
+		$altTextSearched .= $title;
+		$altTextSearched .= " ";
+		$altTextSearched .= $count;
+		$altTextSearched .= ", ";
     }
 
     $data;
@@ -146,7 +151,7 @@ $sec = "5";
     ?>
     <h2>
         <div class="ex1">
-            <img src="chart.png" width="1000px" height="400px" alt="results from dice rolls" />
+            <img src="chart.png" width="1000px" height="400px" alt="Top 10 movies searched by users - <?php echo $altTextSearched ?>" />
         </div>
     </h2>
     </div>
@@ -154,7 +159,7 @@ $sec = "5";
 
 
 
-    <h1>Top 10 Movies Rated by Users<h1>
+    <h1 style="color:white;">Top 10 Movies Rated by Users<h1>
     <div class="container2">
     <?php
     $x = 0;
@@ -166,6 +171,7 @@ $sec = "5";
 
     $dataTitle = array();
     $dataCount = array();
+	$altTextRating = "";
 
     foreach ($dataTopTen2 as $row) {
         $title = $row['Title'];
@@ -173,6 +179,10 @@ $sec = "5";
 
         array_push($dataTitle, $title);
         array_push($dataCount, $count);
+		$altTextRating .= $title;
+		$altTextRating .= " ";
+		$altTextRating .= $count;
+		$altTextRating .= ", ";
     }
 
     $data2;
@@ -284,7 +294,7 @@ $sec = "5";
     ?>
     <h2>
         <div class="ex1">
-            <img src="chart2.png" width="1000px" height="400px" alt="results from dice rolls" />
+            <img src="chart2.png" width="1000px" height="400px" alt="Top 10 Movies Rated by Users - <?php echo $altTextRating ?>" />
         </div>
     </h2>
     </main>
